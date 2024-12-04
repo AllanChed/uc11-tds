@@ -19,10 +19,11 @@ public class conectaDAO {
     
     public Connection connectDB(){
         Connection conn = null;
+        String url = "jdbc:mysql://localhost:3306/uc11"; //Nome da base de dados
         
         try {
         
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/uc11?user=root&password=");
+            conn = DriverManager.getConnection(url, "root", "");
             
         } catch (SQLException erro){
             JOptionPane.showMessageDialog(null, "Erro ConectaDAO" + erro.getMessage());
